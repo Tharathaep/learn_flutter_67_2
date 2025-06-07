@@ -11,7 +11,7 @@ void main() {
       title:"My Title",
       home: Scaffold(
         appBar: AppBar(
-          title: Text("MyApp"),
+          title: Text("My App"),
           backgroundColor: Colors.blue,
           centerTitle: true,
         ),
