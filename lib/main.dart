@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
 
+// Step 4 : sperate the Home widget into it own file
+// import 'screen/home.dart';
+
+import 'package:learn_flutter_67_2/screen/home.dart';
+
 void main() {
   // Step 1: appBar and body
   //runApp(const MyApp());
