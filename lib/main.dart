@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:learn_flutter_67_2/screen/item.dart';
+// import 'package:learn_flutter_67_2/screen/item.dart';
 
 // step4: sperate the Home widget into its own file
 //import 'screen/home.dart';
@@ -37,7 +37,7 @@ void main() {
         // body: Home(),
 
         //Step 8: stateful widget
-        body: Item(),
+        //body: Item(),
       ),
     ),
   );
