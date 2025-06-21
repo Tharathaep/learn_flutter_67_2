@@ -20,7 +20,7 @@ import 'package:flutter/material.dart';
 //Step 11: use a num
 enum Job {
   Engineer(title: "Engineer", image: "assets/engineer.png", color: Colors.blue),
-  Doctor(title: "Doctor", image: "assets/doctor.png", color: Colors.red),
+  Doctor(title: "Doctor", image: "assets/doctor.png", color: Color.fromARGB(255, 255, 63, 204)),
   Teacher(title: "Teacher", image: "assets/teacher.png", color: Colors.green),
   Artist(title: "Artist", image: "assets/artist.png", color: Colors.purple),
   Chef(title: "Chef", image: "assets/chef.png", color: Colors.orange);

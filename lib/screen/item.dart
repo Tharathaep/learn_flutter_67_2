@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:learn_flutter_67_2/models/person.dart';
 
 // Step 12: use google fonts
-// import 'package:google_fonts/google_fonts.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class Item extends StatefulWidget {
   const Item({super.key});
@@ -98,20 +98,36 @@ class _ItemState extends State<Item> {
                 children: [
                   Text(
                     people[index].name,
-                    style: const TextStyle(
-                      fontSize: 24,
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold,
-                    ),
+                    // style: const TextStyle(
+                    //   fontSize: 24,
+                    //   color: Colors.white,
+                    //   fontWeight: FontWeight.bold,
+                    //
+
+                    //Step 12: use google fonts
+                    style: GoogleFonts.kanit(
+                      fontSize: 20,
+                      color: Colors.white70,),
                   ),
                   Text(
                     "${people[index].age} years old",
-                    style: const TextStyle(fontSize: 20, color: Colors.white70),
+                    // style: const TextStyle(fontSize: 20, color: Colors.white70),
+
+                    //Step 12: use google fonts
+                    style: GoogleFonts.kanit(
+                      fontSize: 18,
+                      color: Colors.white70,),
                   ),
                   Text(
                     "Job: ${people[index].job}",
-                    style: const TextStyle(fontSize: 20, color: Colors.white70),
+                    // style: const TextStyle(fontSize: 20, color: Colors.white70),
+
+                    //Step 12: use google fonts
+                    style: GoogleFonts.kanit(
+                      fontSize: 18,
+                      color: const Color.fromARGB(179, 98, 18, 108),),
                   ),
+                  // Step 11: use a enum
                   Image.asset("assets/images/IMG_2995.png", 
                   width: 50, 
                   height: 50),
