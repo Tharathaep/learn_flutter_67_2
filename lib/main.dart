@@ -1,44 +1,25 @@
 import 'package:flutter/material.dart';
-// import 'package:learn_flutter_67_2/screen/item.dart';
-
-// step4: sperate the Home widget into its own file
-//import 'screen/home.dart';
+import 'screen/item.dart'; // เปลี่ยนเป็น import item.dart
 
 void main() {
-  // Step 1: appBar and body
-  //runApp(const MyApp());
+  runApp(const MyApp());
+}
 
-  //const app = MaterialApp(title: "My Title", home: Text("Hello World"));
-  //runApp(app);
-  //runApp(
-  //  MaterialApp(
-  //    title:"My Title",
-  //    home: Scaffold(
-  //      appBar: AppBar(
-  //       title: Text("My App"),
-  //        backgroundColor: Colors.blue,
-  //        centerTitle: true,
-  //      ),
-  //      body: Text("Hello Flutter"),
-  //    )
-  //  )
-  //);
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
 
-  //Step 2: Stateless widget
-  runApp(
-    MaterialApp(
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
       title: "My Title",
       home: Scaffold(
         appBar: AppBar(
-          title: Text("My App"),
+          title: const Text("My App"),
           backgroundColor: const Color.fromARGB(255, 3, 221, 255),
           centerTitle: true,
         ),
-        // body: Home(),
-
-        //Step 8: stateful widget
-        //body: Item(),
+        body: const Item(), // แสดงรายชื่อ
       ),
-    ),
-  );
+    );
+  }
 }
