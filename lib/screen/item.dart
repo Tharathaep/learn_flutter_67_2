@@ -102,7 +102,7 @@ class _ItemState extends State<Item> {
                     //   fontSize: 24,
                     //   color: Colors.white,
                     //   fontWeight: FontWeight.bold,
-                    //
+                    
 
                     //Step 12: use google fonts
                     style: GoogleFonts.kanit(
