@@ -7,6 +7,8 @@ import 'package:learn_flutter_67_2/models/person.dart';
 // Step 12: use google fonts
 import 'package:google_fonts/google_fonts.dart';
 
+import 'addForm.dart';
+
 class Item extends StatefulWidget {
   const Item({super.key});
 
@@ -45,115 +47,69 @@ class _ItemState extends State<Item> {
 
   @override
   Widget build(BuildContext context) {
-    // return Center(
-    //   child: Column(
-    //     mainAxisAlignment: MainAxisAlignment.center,
-    //      children: [
-    //       Text(
-    //         "Quantity: $quantity",
-    //         style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-    //       ),
-    //       const SizedBox(height: 20),
-    //       Row(
-    //         mainAxisAlignment: MainAxisAlignment.center,
-    //         children: [
-    //           ElevatedButton(
-    //             onPressed: addQuantity,
-    //             child: const Text("Add"),
-    //           ),
-    //           const SizedBox(width: 20),
-    //           ElevatedButton(
-    //             onPressed: subtractQuantity,
-    //             child: const Text("Subtract"),
-    //           ),
-    //         ],
-    //       ),
-    //      ],
-    //   ),
-    // );
-    return ListView.builder(
-      itemBuilder: (context, index) {
-        return Container(
-          decoration: BoxDecoration(
-            // color: Colors.grey,
-            borderRadius: BorderRadius.circular(10),
-            // step 11: use a enum
-            color: people[index].job.color,
+    return Column(
+      children: [
+        Expanded(
+          child: ListView.builder(
+            itemCount: people.length,
+            itemBuilder: (context, index) {
+              return Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10),
+                  color: people[index].job.color, // Step 11: use a enum
+                ),
+                margin: const EdgeInsets.symmetric(vertical: 2, horizontal: 5),
+                padding: const EdgeInsets.all(20),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          people[index].name,
+                          style: GoogleFonts.kanit(
+                            fontSize: 30,
+                            color: Colors.white70,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        Text(
+                          'Age: ${people[index].age}, job: ${people[index].job.title}',
+                          style: GoogleFonts.prompt(
+                            fontSize: 20,
+                            color: Colors.white70,
+                            ),
+                        ),
+                        
+                      ],
+                    ),
+                    Image.asset(
+                      "assets/images/IMG_2995.png"
+                      , width: 50,
+                      height: 50,
+                    ),
+                  ],
+                ),
+              );
+            },
           ),
-          margin: EdgeInsets.symmetric(vertical: 2, horizontal: 5),
-          padding: EdgeInsets.all(40),
-          // child: Text(
-          //   data[index],
-          //   style: TextStyle(
-          //     fontSize: 24,
-          //     color: Colors.white,
-          //     fontWeight: FontWeight.bold,
-          //   ),
-          // ),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    people[index].name,
-                    // style: const TextStyle(
-                    //   fontSize: 24,
-                    //   color: Colors.white,
-                    //   fontWeight: FontWeight.bold,
-                    
-
-                    //Step 12: use google fonts
-                    style: GoogleFonts.kanit(
-                      fontSize: 20,
-                      color: Colors.white70,),
-                  ),
-                  Text(
-                    "${people[index].age} years old",
-                    // style: const TextStyle(fontSize: 20, color: Colors.white70),
-
-                    //Step 12: use google fonts
-                    style: GoogleFonts.kanit(
-                      fontSize: 18,
-                      color: Colors.white70,),
-                  ),
-                  Text(
-                    "Job: ${people[index].job}",
-                    // style: const TextStyle(fontSize: 20, color: Colors.white70),
-
-                    //Step 12: use google fonts
-                    style: GoogleFonts.kanit(
-                      fontSize: 18,
-                      color: const Color.fromARGB(179, 98, 18, 108),),
-                  ),
-                  // Step 11: use a enum
-                  Image.asset("assets/images/IMG_2995.png", 
-                  width: 50, 
-                  height: 50),
-                ],
-              ),
-              // Text(
-              //   "${people[index].name} - ${people[index].age} - ${people[index].job}",
-              //   style: const TextStyle(
-              //     fontSize: 24,
-              //     color: Colors.white,
-              //     fontWeight: FontWeight.bold,
-              //   ),
-              // ),
-              IconButton(
-                icon: const Icon(Icons.delete, color: Colors.red),
-                onPressed: () {
-                  setState(() {
-                    people.removeAt(index);
-                  });
-                },
-              ),
-            ],
-          ),
-        );
-      },
-      itemCount: people.length,
+        ),
+        SizedBox(
+          width: 100,
+          height: 100,
+          child: IconButton(onPressed: (){
+            Navigator.pushReplacement(
+              context, 
+              MaterialPageRoute(builder: (context) => const AddForm()),
+            );
+          }, 
+          icon: Icon(
+            Icons.add_circle, 
+            size: 40, 
+            color: Colors.blue)),
+        )
+      ],
     );
   }
 }
